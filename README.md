@@ -1,4 +1,4 @@
-# Code Kata Berlin 1
+# Inviqa Code Kata
 
 Code Kata Bootstrap repository:
 
