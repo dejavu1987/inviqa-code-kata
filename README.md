@@ -15,10 +15,23 @@ $ cd php
 $ composer install
 ```
 
+#### PHPUnit
+
+Install PHPUnit
+
+```
+$ composer require --dev phpunit/phpunit
+```
+
+#### PHPSpec
+
+```
+$ composer require --dev phpspec/phpspec
+```
 Create your test class:
 
 ```
-$ ./vendor/bin/phpspec describe <your first class name>
+$ ./vendor/bin/phpspec describe "<your first class name>"
 ```
 
 Run the specs:
