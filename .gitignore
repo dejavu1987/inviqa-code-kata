@@ -8,6 +8,7 @@ javascript/coverage
 typescript/coverage
 
 php/vendor
+php/composer.lock
 
 venv
 __pycache__/
