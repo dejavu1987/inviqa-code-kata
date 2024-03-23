@@ -78,9 +78,3 @@ $ venv/bin/pytest -vvv
 $ git reset --hard
 $ git clean -f
 ```
-
-## Special Challenges
-
-## Meetup finder
-
-Checkout the `meetup-finder` branch.
