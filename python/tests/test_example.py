@@ -3,7 +3,7 @@ from example.example import do_nothing
 
 
 def test_do_nothing_raises_value_error():
-    assert_that(calling(do_nothing).with_args(dict()), raises(ValueError))
+    assert_that(calling(do_nothing).with_args(None), raises(ValueError))
 
 
 def test_do_nothing_does_nothing():

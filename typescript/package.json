@@ -1,7 +1,7 @@
 {
-  "name": "code-kata-berlin-1",
+  "name": "inviqa-code-kata",
   "version": "1.0.0",
-  "description": "Code Kata Berlin Bootstrap",
+  "description": "Code Kata Bootstrap TS",
   "main": "kata.js",
   "scripts": {
     "test": "jest",
@@ -11,9 +11,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dantleech/code-kata-berlin-1.git"
+    "url": "git+https://github.com/dejavu1987/inviqa-code-kata.git"
   },
-  "homepage": "https://github.com/dantleech/code-kata-berlin-1#readme",
+  "homepage": "https://github.com/dejavu1987/inviqa-code-kata#readme",
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
