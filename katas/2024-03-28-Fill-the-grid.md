@@ -16,6 +16,12 @@ Fill the grid with blocks
 - Placing additional input when grid is full should reject the input
 - Placing multiple input should fit in the grid as long as there is space for the input
 
+## Demo
+
+https://stackblitz.com/edit/vitejs-vite-kklmmn?file=README.md
+
+## Recording
+
 ## TDD
 
 ![TDD](./images/tdd.gif)
