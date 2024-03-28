@@ -1,0 +1,15 @@
+workspace('code-kata'):
+  description: Code Kata Workspace
+  harnessLayers:
+    - inviqa/php:v1.6.2
+
+attribute('php.version'): 8.3
+attribute('php.distro_codename'): bookworm
+attribute('git.default_branch'): 'master'
+attribute('services.lighthouse.enabled'): false
+attribute('services.webapp.enabled'): false
+attribute('services.relay.enabled'): false
+attribute('services.chrome.enabled'): false
+attribute('services.redis.enabled'): false
+attribute('services.mysql.enabled'): false
+attribute('database.platform'): ~
