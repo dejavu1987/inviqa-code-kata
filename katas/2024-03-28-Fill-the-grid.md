@@ -15,6 +15,8 @@ Fill the grid with blocks
 - Placing any input smaller than grid itself should fit
 - Placing additional input when grid is full should reject the input
 - Placing multiple input should fit in the grid as long as there is space for the input
+  - The block needs to be placed from left to right and top to bottom
+  - Play with DEMO to understand the placement logic.
 
 ## Demo
 
