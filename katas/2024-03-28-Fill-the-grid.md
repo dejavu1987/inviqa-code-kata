@@ -4,7 +4,7 @@
 
 Fill the grid with blocks
 
-![Fill the Grid](./images/fill-the-grid.png)
+<img src="./images/fill-the-grid.png" width="400"/>
 
 - There is a 2D grid of any given dimension, you need to fill it in with blocks that user input.
 - The user can input 2D blocks of any dimensions
