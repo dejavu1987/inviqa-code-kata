@@ -3,18 +3,46 @@ interface Dimension {
   h: number;
 }
 
+interface Position {
+  x: number;
+  y: number;
+}
+
+type ChildObject = Dimension & Position;
+
 type Grid = (0 | 1)[][];
 
 class FillTheGrid {
   grid: Grid;
+  children: ChildObject[];
+  rowsTemplate: number[];
+  colsTemplate: number[];
 
   constructor() {
     this.grid = [];
+    this.children = [];
+    this.rowsTemplate = [];
+    this.colsTemplate = [];
   }
 
   init(rows: number, cols: number): this {
     this.grid = Array.from({ length: rows }, () => Array(cols).fill(0));
+    this.rowsTemplate = Array(rows).fill(1);
+    this.colsTemplate = Array(cols).fill(1);
     return this;
+  }
+
+  setGridTemplate(rowTpl: number[], colTpl?: number[]): void {
+    if (rowTpl.length !== this.grid.length) {
+      throw new Error("Invalid row template length");
+    }
+    if (colTpl && colTpl.length !== this.grid[0].length) {
+      throw new Error("Invalid column template length");
+    }
+    this.rowsTemplate = rowTpl;
+    if (colTpl) {
+      this.colsTemplate = colTpl;
+    }
   }
 
   place(input: Dimension): Grid {
@@ -45,12 +73,18 @@ class FillTheGrid {
     }
     return true;
   }
+
   private fillInput(row: number, col: number, input: Dimension): void {
     for (let i = row; i < row + input.h; i++) {
       for (let j = col; j < col + input.w; j++) {
         this.grid[i][j] = 1;
       }
     }
+    this.children.push({
+      ...input,
+      x: col,
+      y: row,
+    });
   }
 }
 
