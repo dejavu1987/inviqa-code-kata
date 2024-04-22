@@ -9,83 +9,14 @@ Code Kata Bootstrap repository:
 [README](./typescript/README.MD)
 
 ### PHP
-
-#### WORKSPACE
-Make sure you have installed Docker and Workspace https://github.com/my127/workspace?tab=readme-ov-file#installation
-
-Install the project
-```
-cd php
-ws install
-```
-
-Run Tests
-```
-./vendor/bin/phpunit
-```
-
-#### Running in the host
-```
-$ cd php
-$ composer install
-```
-
-#### PHPUnit
-
-Install PHPUnit
-
-```
-$ composer require --dev phpunit/phpunit
-```
-
-#### PHPSpec
-
-```
-$ composer require --dev phpspec/phpspec
-```
-Create your test class:
-
-```
-$ ./vendor/bin/phpspec describe "<your first class name>"
-```
-
-Run the specs:
-
-```
-$ ./vendor/bin/phpspec run
-```
+[README](./php/README.md)
 
 ### Python
+[README](./python/README.md)
 
-```
-$ cd python
-```
+## Remember TDD
+![image](https://github.com/dejavu1987/inviqa-code-kata/assets/1720245/5b6153b7-1cb1-42d7-ab4a-8dbc68abe979)
 
-Install, create and activate the virtualenv:
-
-```
-$ pip3 install virtualenv
-$ virtualenv -p python3 venv
-$ . venv/bin/activate
-```
-
-To activate the virtuaenv on Linux, do:
-
-```
-source .venv/bin/activate
-```
-
-Install packages:
-
-```
-$ pip install -r requirements.txt
-```
-
-Run the tests:
-
-```
-$ venv/bin/pytest -vvv
-```
 
 ## Remember to DELETE YOUR CODE!
 
