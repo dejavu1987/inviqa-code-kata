@@ -1,4 +1,4 @@
-# Code Kata Berlin 1 (TypeScript)
+# Code Kata Bootstrap (TypeScript)
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ which contains basic barebone to get you up and running and runs jest watch on t
 
 You are all set to start coding.
 
-#### Run the tests:
+### Run the tests:
 
 ```
 $ yarn test
@@ -47,7 +47,7 @@ Run the tests and watch file changes:
 $ yarn test-watch
 ```
 
-#### Run the tests using VSCode extension
+## (Optional) Run the tests using VSCode extension
 
 Or install Jest for VSCode
 https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest
