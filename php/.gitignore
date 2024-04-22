@@ -1,0 +1,10 @@
+.idea/
+.vscode/
+/.my127ws
+/.dockerignore
+/docker-compose.yml
+/mutagen.yml
+/mutagen.yml.lock
+
+/vendor
+/composer.lock
