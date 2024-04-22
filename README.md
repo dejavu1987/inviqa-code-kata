@@ -10,6 +10,21 @@ Code Kata Bootstrap repository:
 
 ### PHP
 
+#### WORKSPACE
+Make sure you have installed Docker and Workspace https://github.com/my127/workspace?tab=readme-ov-file#installation
+
+Install the project
+```
+cd php
+ws install
+```
+
+Run Tests
+```
+./vendor/bin/phpunit
+```
+
+#### Running in the host
 ```
 $ cd php
 $ composer install
