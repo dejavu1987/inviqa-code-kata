@@ -12,3 +12,6 @@ php/composer.lock
 
 venv
 __pycache__/
+/php/auth.json
+/php/Jenkinsfile
+/php/.phpunit.result.cache
