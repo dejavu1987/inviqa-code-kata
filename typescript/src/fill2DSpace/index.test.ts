@@ -1,7 +1,7 @@
 import FillTheGrid from "./index";
 
 describe("FillTheGrid", () => {
-  let fillTheGrid;
+  let fillTheGrid: FillTheGrid;
 
   beforeEach(() => {
     fillTheGrid = new FillTheGrid();
@@ -215,6 +215,86 @@ describe("FillTheGrid", () => {
       fillTheGrid.setGridTemplate([1, 2, 3], [3, 2, 1]);
       expect(fillTheGrid.rowsTemplate).toEqual([1, 2, 3]);
       expect(fillTheGrid.colsTemplate).toEqual([3, 2, 1]);
+    });
+
+    it("should store row col relative positions", () => {
+      fillTheGrid.init(3, 3);
+
+      expect(fillTheGrid.rowPositions).toEqual([0, 1 / 3, 2 / 3]);
+      expect(fillTheGrid.colPositions).toEqual([0, 1 / 3, 2 / 3]);
+
+      fillTheGrid.setGridTemplate([2, 1, 1], [1, 2, 1]);
+
+      expect(fillTheGrid.rowPositions).toEqual([0, 1 / 2, 3 / 4]);
+      expect(fillTheGrid.colPositions).toEqual([0, 1 / 4, 3 / 4]);
+    });
+
+    it("should store row col relative sizes", () => {
+      fillTheGrid.init(3, 3);
+
+      expect(fillTheGrid.rowSizes).toEqual([1 / 3, 1 / 3, 1 / 3]);
+      expect(fillTheGrid.colSizes).toEqual([1 / 3, 1 / 3, 1 / 3]);
+
+      fillTheGrid.setGridTemplate([2, 1, 1], [1, 2, 1]);
+
+      expect(fillTheGrid.rowSizes).toEqual([1 / 2, 1 / 4, 1 / 4]);
+      expect(fillTheGrid.colSizes).toEqual([1 / 4, 1 / 2, 1 / 4]);
+    });
+  });
+  describe("Calculate children", () => {
+    describe("When no templates are set", () => {
+      it("should calculate relative position and size of a child", () => {
+        fillTheGrid.init(3, 3);
+        fillTheGrid.place({ w: 1, h: 1 });
+        fillTheGrid.calculateChildren();
+        expect(fillTheGrid.calcChildren[0]).toEqual({
+          w: 1 / 3,
+          h: 1 / 3,
+          x: 0,
+          y: 0,
+        });
+      });
+    });
+    describe("When template is set", () => {
+      it("should calculate relative position and size of a child", () => {
+        fillTheGrid.init(3, 3);
+        fillTheGrid.setGridTemplate([2, 1, 1], [1, 2, 1]);
+        fillTheGrid.place({ w: 1, h: 1 });
+        fillTheGrid.calculateChildren();
+        expect(fillTheGrid.calcChildren[0]).toEqual({
+          w: 1 / 4,
+          h: 1 / 2,
+          x: 0,
+          y: 0,
+        });
+
+        fillTheGrid.place({ w: 2, h: 1 });
+        fillTheGrid.calculateChildren();
+        expect(fillTheGrid.calcChildren[1]).toEqual({
+          x: 1 / 4,
+          y: 0,
+          w: 3 / 4,
+          h: 1 / 2,
+        });
+
+        fillTheGrid.place({ w: 1, h: 2 });
+        fillTheGrid.calculateChildren();
+        expect(fillTheGrid.calcChildren[2]).toEqual({
+          x: 0,
+          y: 1 / 2,
+          w: 1 / 4,
+          h: 1 / 2,
+        });
+
+        fillTheGrid.place({ w: 2, h: 2 });
+        fillTheGrid.calculateChildren();
+        expect(fillTheGrid.calcChildren[3]).toEqual({
+          x: 1 / 4,
+          y: 1 / 2,
+          w: 3 / 4,
+          h: 1 / 2,
+        });
+      });
     });
   });
 });
