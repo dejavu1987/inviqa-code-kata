@@ -15,3 +15,4 @@ __pycache__/
 /php/auth.json
 /php/Jenkinsfile
 /php/.phpunit.result.cache
+/php/.phpunit.cache
